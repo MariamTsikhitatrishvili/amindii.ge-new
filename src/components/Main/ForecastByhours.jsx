@@ -95,7 +95,7 @@ function ForecastByhours() {
                                 return <div className='mb-5 flex items-center justify-between' key={i}>
                                     <div>
                                         <div className='flex items-center'>
-                                            <div><img src="/images/clock.svg" alt="" /></div>
+                                            <div><img src={`${process.env.PUBLIC_URL}/images/clock.svg`} alt="clock" /></div>
                                             <div className='font-myriad ml-2 text-sm text-white flex items-center'>
                                                 {getMinutes(d.dt)}
 
@@ -113,7 +113,7 @@ function ForecastByhours() {
 
                                     <div className='flex items-center mr-4'>
                                         <div className='w-10 h-10'>
-                                            <img src={`/images/weatherIcons/${d.weather && d.weather[0].icon}.svg`} alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/images/weatherIcons/${d.weather && d.weather[0].icon}.svg`} alt="" />
                                         </div>
                                         <div className='text-white text-sm ml-3 font-myriad'>
                                             {Math.round(d.temp)}°

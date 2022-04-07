@@ -30,7 +30,7 @@ function Currency() {
         <div className="grid grid-cols-2 bg-sidebar-white rounded-[20px] overflow-hidden mb-4">
           <div className="flex items-center col-span-1 text-white bg-sidebar-white px-3 rounded-[20px] gap-2 font-myriad">
             <span className=" xl:text-base md:text-xs">GEL</span>
-            <img src="/images/currencyIcons/gel.svg" alt="" />
+            <img src={`${process.env.PUBLIC_URL}/images/currencyIcons/gel.svg`} alt="gel" />
             <span className=" xl:text-base md:text-xs">{lariValue.toString().substring(0, 4)}</span>
           </div>
 
@@ -59,7 +59,7 @@ function Currency() {
             return <div className="grid grid-cols-2 bg-sidebar-white rounded-[20px] overflow-hidden mb-4" key={index}>
               <div className="flex items-center col-span-1 text-white bg-sidebar-white px-3 rounded-[20px] gap-2 font-myriad">
                 <span className=" xl:text-base md:text-xs">{currency.cur_code}</span>
-                <img src={`/images/currencyIcons/${currency.cur_code.toLowerCase()}.svg`} alt="" />
+                <img src={`${process.env.PUBLIC_URL}/images/currencyIcons/${currency.cur_code.toLowerCase()}.svg`} alt="" />
                 <span className=" xl:text-base md:text-xs">{(lariValue === '' || lariValue == 0) ? '' : (lariValue / currencyValue).toFixed(2)}</span>
               </div>
 

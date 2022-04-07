@@ -37,7 +37,7 @@ function DropDown() {
             >
                 {cities.find(city => city.name_eng.toLowerCase() === cityName)?.name_geo}
                 <div className='w-[16px] h-[16px] flex items-center justify-center border border-opacity-10 border-white rounded-full'>
-                    <img src="/images/dropdown_arrow.svg" alt="arrow" />
+                    <img src={`${process.env.PUBLIC_URL}/images/dropdown_arrow.svg`} alt="arrow" />
                 </div>
             </div>
 

@@ -57,7 +57,7 @@ function DateHours() {
 
   return (
     <div className="flex items-center">
-      <div className="w-[40px] h-[40px] flex items-center justify-center bg-sidebar-white rounded-full mr-3"><img src="/images/calendar.svg" alt="" /></div>
+      <div className="w-[40px] h-[40px] flex items-center justify-center bg-sidebar-white rounded-full mr-3"><img src={`${process.env.PUBLIC_URL}/images/calendar.svg`} alt="" /></div>
       <div className="flex flex-col ">
         <div className="font-helvetica text-xs text-white opacity-70">
           {fullMonth}

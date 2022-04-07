@@ -94,7 +94,7 @@ function Sidebar() {
                         <div className='font-myriad text-white'>
                             {cities.find(city => city.name_eng === cityName)?.name_geo}
                         </div>
-                        <img src={`/images/weatherIcons/${cityObject.weather && cityObject.weather[0].icon}.svg`} className="w-32 mt-6" alt="" />
+                        <img src={`${process.env.PUBLIC_URL}/images/weatherIcons/${cityObject.weather && cityObject.weather[0].icon}.svg`} className="w-32 mt-6" alt="" />
                         <div className='font-myriad text-white text-base mt-6'>
                             {getWeatherName(cityObject?.weather[0]?.main)}
                         </div>

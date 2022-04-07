@@ -154,7 +154,7 @@ function ForecastBy12Days() {
                                         {getDate(d.dt)}
                                     </div>
                                     <div className='min-w-[50px] min-h-[70px]'>
-                                        <img src={`/images/weatherIcons/${d.weather && d.weather[0].icon}.svg`} alt="" />
+                                        <img src={`${process.env.PUBLIC_URL}/images/weatherIcons/${d.weather && d.weather[0].icon}.svg`} alt="" />
                                     </div>
                                     <div className='font-myriad text-xs text-white mt-2'>
                                         {Math.round(d.temp.min)}°  {Math.round(d.temp.max)}°
@@ -208,7 +208,7 @@ function ForecastBy12Days() {
                                             {dayKa}
                                         </div>
                                         <div className='min-w-[50px] min-h-[70px]'>
-                                            <img src={`/images/weatherIcons/${d.weather && d.weather[0].icon}.svg`} alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/images/weatherIcons/${d.weather && d.weather[0].icon}.svg`} alt="" />
                                         </div>
                                         <div className='font-myriad text-xs text-white mt-2'>
                                             {Math.round(d.temp.min)}°  {Math.round(d.temp.max)}°

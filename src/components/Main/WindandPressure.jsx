@@ -11,7 +11,7 @@ function WindandPressure() {
                 <div>
                     <div className='flex items-center'>
                         <div className='flex items-center justify-center w-[40px] h-[40px] rounded-full bg-sidebar-white '>
-                            <img src="/images/wind.svg" alt="" />
+                            <img src={`${process.env.PUBLIC_URL}/images/wind.svg`} alt="wind" />
                         </div>
                         <div className='ml-4'>
                             <div className='font-helvetica text-xs text-white opacity-60'>
@@ -24,7 +24,7 @@ function WindandPressure() {
                     </div>
                     <div className='flex items-center mt-4'>
                         <div className='flex items-center justify-center w-[40px] h-[40px] rounded-full bg-sidebar-white '>
-                            <img src="/images/pressure.svg" alt="" />
+                            <img src={`${process.env.PUBLIC_URL}/images/pressure.svg`} alt="pressure" />
                         </div>
                         <div className='ml-4'>
                             <div className='font-helvetica text-xs text-white opacity-60'>
