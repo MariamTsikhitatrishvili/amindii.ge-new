@@ -5,7 +5,7 @@ import Test from './Test';
 
 function App() {
   return (
-    <Router basename='/'>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route exact path='/' element={<Main />} />
         <Route exact path='/home' element={<Test />} />
