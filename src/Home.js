@@ -31,30 +31,35 @@ const childrenVariants = {
 
 export default function Home() {
   return (
-    <div className="bg-site-deep-blue rounded-2xl md:ml-7 mt-7 container p-8">
-      <motion.div className="hidden sm:block" variants={parentVariants} initial="initial" animate="animate">
-        <motion.div variants={childrenVariants}>
-          <ForecastBy12Days />
-        </motion.div>
-        <motion.div className="grid lg:grid-cols-7 lg:grid-rows-1 grid-rows-2 grid-cols-2  gap-5 mt-4" variants={childrenVariants}>
+    <motion.div className="bg-site-deep-blue rounded-2xl md:ml-7 mt-7 container p-8" variants={parentVariants}>
+      <motion.div className="hidden sm:block" variants={childrenVariants} initial="initial" animate="animate">
+        <ForecastBy12Days />
+
+        <div className="grid lg:grid-cols-7 lg:grid-rows-1 grid-rows-2 grid-cols-2  gap-5 mt-4">
           <div className="lg:col-span-3 col-span-2 col-span">
-            <ForecastByhours />
+            <ForecastByhours variants={childrenVariants} />
           </div>
 
           <div className="lg:col-span-2 md:col-span-1 col-span-2 grid grid-rows-2">
-            <div className="mb-4"><WindandPressure /></div>
-            <div><AirPolution /></div>
+            <div className="mb-4">
+              <WindandPressure variants={childrenVariants} />
+            </div>
+
+            <div>
+              <AirPolution variants={childrenVariants} />
+            </div>
           </div>
+
           <div className="lg:col-span-2 md:col-span-1 col-span-2">
-            <Currency />
+            <Currency variants={childrenVariants} />
           </div>
-        </motion.div>
+        </div>
         {/* <motion.div variants={childrenVariants}>
           <SimilarSites />
         </motion.div> */}
       </motion.div>
 
-      
+
       <motion.div className="sm:hidden" variants={parentVariants} initial="initial" animate="animate">
         <motion.div className="mb-4" variants={childrenVariants}>
           <ForecastBy12Days />
@@ -76,6 +81,6 @@ export default function Home() {
         </motion.div> */}
       </motion.div>
 
-    </div>
+    </motion.div>
   )
 }

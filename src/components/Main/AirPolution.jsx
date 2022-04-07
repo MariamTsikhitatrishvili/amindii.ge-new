@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { useAppContext } from '../Store'
+import {motion} from 'framer-motion'
 
-function AirPolution() {
+function AirPolution({variants}) {
     const [pollutionObject, setPollutionObject] = useState({})
 
     const { airPollution } = useAppContext()
@@ -56,7 +57,7 @@ function AirPolution() {
     console.log(pollutionObject);
 
     return (
-        <div className='p-6 bg-sidebar-white rounded-xl max-h-[168px]'>
+        <motion.div className='p-6 bg-sidebar-white rounded-xl max-h-[168px]' variants={variants}>
             <div className='xl:text-base md:text-xs  text-white font-myriad'>ჰაერის დაბინძურება</div>
             {
                 (pollutionObject && Object.keys(pollutionObject).length > 0) && <div className='flex items-center justify-center rounded-2xl py-2 text-white text-xs font-myriad  my-4' style={pollutionObject.background}>
@@ -73,7 +74,7 @@ function AirPolution() {
                     )
                 }
             </div>
-        </div>
+        </motion.div>
     )
 }
 

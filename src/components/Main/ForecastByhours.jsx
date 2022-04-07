@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useAppContext } from '../Store'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
-function ForecastByhours() {
+function ForecastByhours({variants}) {
     const { cityObject } = useAppContext()
     const [data, setData] = useState(null)
 
@@ -73,7 +73,7 @@ function ForecastByhours() {
     // const d = new Date()
     // console.log(d.getDate());
     useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityObject?.coord?.lat}&lon=${cityObject?.coord?.lon}&exclude=current,minutely,daily,alerts&units=metric&appid=0a595777f15bfcfb7a415bd95948766c`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityObject?.coord?.lat}&lon=${cityObject?.coord?.lon}&exclude=current,minutely,daily,alerts&units=metric&appid=4c24ebb97acd6d82377d5b598a15d2e7`)
             .then(res => res.json())
             .then(data => setData(data))
 
@@ -83,7 +83,7 @@ function ForecastByhours() {
     }, [cityObject])
 
     return (
-        <div>
+        <motion.div variants={variants}>
             {
                 Object.keys(cityObject).length > 0 && <div className='bg-sidebar-white rounded-xl p-6 flex flex-col'>
                     <div className='xl:text-base md:text-xs font-myriad text-white mb-4'>
@@ -126,7 +126,7 @@ function ForecastByhours() {
                 </div>
             }
 
-        </div>
+        </motion.div>
     )
 }
 

@@ -1,11 +1,13 @@
 import React from 'react'
 import { useAppContext } from '../Store'
 
-function WindandPressure() {
+import { motion } from 'framer-motion'
+
+function WindandPressure({variants}) {
     const { cityObject } = useAppContext()
-    console.log(cityObject, "pres");
+
     return (
-        <div className='p-6 bg-sidebar-white rounded-xl'>
+        <motion.div className='p-6 bg-sidebar-white rounded-xl' variants={variants}>
             <div className='xl:text-base md:text-xs text-white font-myriad mb-4'>ქარი და წნევა</div>
             <div>
                 <div>
@@ -37,7 +39,7 @@ function WindandPressure() {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

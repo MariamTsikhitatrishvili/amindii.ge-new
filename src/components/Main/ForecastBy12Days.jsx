@@ -92,7 +92,7 @@ function ForecastBy12Days() {
     const { cityObject } = useAppContext()
     console.log(data, 'city');
     useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityObject?.coord?.lat}&lon=${cityObject?.coord?.lon}&exclude=hourly,minutely,alerts&units=metric&appid=0a595777f15bfcfb7a415bd95948766c`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${cityObject?.coord?.lat}&lon=${cityObject?.coord?.lon}&exclude=hourly,minutely,alerts&units=metric&appid=4c24ebb97acd6d82377d5b598a15d2e7`)
             .then(res => res.json())
             .then(data => setData(data))
 

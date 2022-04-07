@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react"
 import { useForm } from 'react-hook-form'
 
-function Currency() {
+import { motion } from 'framer-motion'
+
+function Currency({ variants }) {
   const [lariValue, setLariValue] = useState(1)
   const [currencyData, setCurrencyData] = useState(null)
 
@@ -19,10 +21,10 @@ function Currency() {
   }
 
   return (
-    currencyData && <div className="bg-sidebar-white p-6 mb-6 md:mb-0  rounded-xl">
+    currencyData && <motion.div className="bg-sidebar-white p-6 mb-6 md:mb-0  rounded-xl" variants={variants}>
       <div className='flex justify-between mb-4'>
         <div className='xl:text-base md:text-xs font-myriad text-white'>
-        ვალუტის კურსი
+          ვალუტის კურსი
         </div>
       </div>
 
@@ -79,7 +81,7 @@ function Currency() {
           })
         }
       </form>
-    </div>
+    </motion.div>
   )
 }
 
